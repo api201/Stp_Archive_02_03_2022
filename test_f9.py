@@ -1,10 +1,9 @@
-from selenium import webdriver
+from selenium import webdriver  #variant 1
 import pytest
 import time
 import math
 
 final = ''
-
 
 @pytest.fixture(scope="session")
 def browser():
@@ -12,7 +11,6 @@ def browser():
     yield br
     br.quit()
     print(final)  # напечатать ответ про Сов в конце всей сессии
-
 
 @pytest.mark.parametrize('lesson', ['236895', '236896', '236897', '236898', '236899', '236903', '236904', '236905'])
 def test_find_hidden_text(browser, lesson):
